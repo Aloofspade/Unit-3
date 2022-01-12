@@ -63,7 +63,7 @@ courseForm.addEventListener('submit', (e) => {
     const price = +priceEl.value;
     const createdCourse = new Course(title, price);
     if (!validate(createdCourse)) {
-        console.error("invaild input/s");
+        console.error("invalid input/s");
         return;
     }
     //! this is where you would normally save the object to your database if it was successfully validated 
