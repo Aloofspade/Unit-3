@@ -1,33 +1,40 @@
-interface IName {
-    firstName: string
-    lastName: string;
-}
- 
-interface IWork {
-    doWork(): void;
-}
- 
-abstract class BaseEmployee implements IName, IWork {
-    firstName: string;
-    lastName: string;
- 
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
- 
-    abstract doWork(): void;
-}
- 
-class Employee extends BaseEmployee {
-    constructor(firstName: string, lastName: string) {
-        super(firstName, lastName);
-    }
- 
-    doWork(): void {
-        console.log(`${this.lastName}, ${this.firstName} doing work...`);
+abstract class Person {
+    abstract name: string;
+
+    display(): void{
+        console.log(this.name);
     }
 }
- 
-let emp: IWork = new Employee('Dana', 'Ryan');
-emp.doWork();
+
+class Employee extends Person { 
+    name: string;
+    empCode: number;
+    
+    constructor(name: string, code: number) { 
+        super(); // must call super()
+        
+        this.empCode = code;
+        this.name = name;
+    }
+}
+
+let emp: Person = new Employee("James", 100);
+emp.display(); //James
+
+class Circle {
+    static pi = 3.14;
+
+    static calculateArea(radius:number) {
+        return this.pi * radius * radius;
+    }
+
+    calculateCircumference(radius:number):number { 
+        return 2 * Circle.pi * radius;
+    }
+}
+
+Circle.calculateArea(5); // returns 78.5
+
+let circleObj = new Circle();
+circleObj.calculateCircumference(5) // returns 31.4000000
+//circleObj.calculateArea(); <-- cannot call this
