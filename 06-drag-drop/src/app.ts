@@ -376,4 +376,5 @@ class ProjectList implements DragTarget {
     const activeProjects = new ProjectList('active');
     const finishedProjects = new ProjectList("finished");
     
-    
+   
+
