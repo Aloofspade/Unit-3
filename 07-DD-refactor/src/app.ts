@@ -4,8 +4,6 @@ import { ProjectList } from "./components/project-list.js";
 
 
 
-
-
     
  new ProjectInput();
  new ProjectList('active');
