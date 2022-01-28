@@ -120,6 +120,35 @@ export class Aims {
          pyramid(base:number, height: number, perimeter: number): number{
             return  (1/2 * (perimeter * height **2) + base)  
         },
+        
+        /**
+     * finds the Surface Area of an  Sphere 
+     * @param {number}  radius - the  radius of the Sphere 
+     * @returns {number}  
+     */
+         sphere(radius: number): number{
+            return  4 * Aims.pi * radius **2 
+        },
+        /**
+     * finds the Surface Area of an Right Circular Cylinder
+     * @param {number}  radius - the  radius of the  Cylinder
+     * @param {number}  height - the  height of the  Cylinder
+     * @returns {number}  
+     */
+         cylinder(radius: number, height: number): number{
+            return  (2 * Aims.pi * radius * height) + (2 * Aims.pi * radius **2)
+        },
+        /**
+     * finds the Surface Area of an Right Prism
+     * @param {number}  radius - the  radius of the  Prism
+     * @param {number}  height - the  height of the  Prism
+     * @returns {number}  
+     */
+         prism(radius: number, height: number): number{
+            return  (2 * Aims.pi * radius * height) + (2 * Aims.pi * radius **2)
+        },
+
+        
 
     }
 }
